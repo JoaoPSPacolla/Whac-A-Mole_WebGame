@@ -13,11 +13,6 @@ input[type="password"] {
     box-sizing: border-box;
 }
 
-.opcoesLogin p, 
-.opcoesLogin label {
-    margin: 0;
-}
-
 input[type="checkbox"] {
     width: auto;
     margin: 0;
@@ -37,6 +32,11 @@ button{
     height: 100%;
 }
 
+.opcoesLogin p, 
+.opcoesLogin label {
+    margin: 0;
+}
+
 .caixaTexto{
     padding: 50px 155px 60px 155px; /*A sequencia é: cima → direita → baixo → esquerda*/
     display: flex;
@@ -51,6 +51,28 @@ button{
     width: 100%;                     
     margin-top: 10px;  
     align-items: center;              
+}
+
+.campoInput {
+    position: relative;
+    width: 100%;
+}
+
+.campoInput input {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 12px;
+    box-sizing: border-box;
+}
+
+.iconeInput {
+    position: absolute;
+    left: 12px;           
+    top: 50%;
+    transform: translateY(-50%); 
+    width: 20px;           
+    height: 20px;          
+    pointer-events: none;  /* Permite clicar através do ícone para focar no input */
 }
 
 #lembrarLogin {
