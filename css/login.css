@@ -1,6 +1,10 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html, body {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
 }
 
 body{
@@ -8,6 +12,7 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 25px;
+    align-items: center;
 }
 
 input[type="text"], 
