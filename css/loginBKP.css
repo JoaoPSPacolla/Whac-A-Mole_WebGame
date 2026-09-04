@@ -7,7 +7,7 @@ body{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding-top: 25px;
+    align-items: center; /* centraliza verticalmente também */
 }
 
 input[type="text"], 
@@ -24,11 +24,6 @@ input[type="checkbox"] {
 }
 
 /* containers */
-
-.caixaLogin{
-    border: 1px solid black;
-    max-height: 90%;
-}
 
 .caixaFoto{
     width: 100%;
@@ -102,33 +97,4 @@ button{
     text-decoration: underline;
     cursor: pointer;
     margin: 0;
-}
-
-/* Estilos aplicados apenas em celulares (telas de até 767px) */
-/* Estilos aplicados apenas em celulares (telas de até 767px) */
-@media screen and (max-width: 767px) {
-  body {
-    align-items: center;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    margin: 0;
-    padding: 15px;
-  }
-
-  /* Reduz os espaçamentos laterais para os campos ocuparem a tela */
-  .caixaTexto {
-    padding: 30px 20px;
-  }
-
-  /* Reduz a altura da foto no celular */
-  .caixaFoto {
-    height: 220px;
-  }
-
-  /* Impede que a imagem fique distorcida ou esticada */
-  .caixaFoto img {
-    object-fit: cover;
-  }
 }
