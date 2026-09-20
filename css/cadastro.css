@@ -1,0 +1,41 @@
+label{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+input{
+    font-family: sans-serif;
+    width: 98%;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.cadastro{
+    background: aquamarine;
+    width: 500px;
+    padding: 30px;
+    /*display: flex;*/
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+}
+
+.containerBotao{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botao{
+    width: 150px;
+    height: 40px;
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
