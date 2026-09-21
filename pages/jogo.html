@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerte a Toupeira - Jogo</title>
+    <link rel="stylesheet" href="../css/jogo.css">
+</head>
+
+<body>
+    <main class="paginaJogo">
+        <header class="topbar" aria-label="Navegação principal">
+            <div class="marca">
+                <span class="marcaIcone"></span>
+                <span>Acerte a toupeira!</span>
+            </div>
+
+            <nav class="linksNavegacao" aria-label="Links principais">
+                <a href="conta.html">Perfil</a>
+                <a href="ranking.html">Ranking</a>
+                <a href="historico.html">Histórico</a>
+                <a href="../index.html" class="sair">Sair</a>
+            </nav>
+        </header>
+
+        <div class="conteudoJogo">
+            <!-- Container jogável com fundo de solo -->
+            <section class="containerJogo" aria-label="Tabuleiro do jogo">
+                <div class="gradeJogo">
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco.avif" alt="Buraco Vazio" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco com toupeira.jpg" alt="Buraco com Toupeira" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco.avif" alt="Buraco Vazio" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco com toupeira.jpg" alt="Buraco com Toupeira" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco com toupeira.jpg" alt="Buraco com Toupeira" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco.avif" alt="Buraco Vazio" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco.avif" alt="Buraco Vazio" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco.avif" alt="Buraco Vazio" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/imagem buraco com toupeira.jpg" alt="Buraco com Toupeira" class="imgElemento">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Painel lateral com Timer e Pontuação -->
+            <aside class="painelStatus" aria-label="Informações da Partida">
+                <div class="cartaoStatus">
+                    <span class="rotuloStatus">Tempo Restante</span>
+                    <strong id="timer">00:60</strong>
+                </div>
+
+                <div class="cartaoStatus">
+                    <span class="rotuloStatus">Pontuação</span>
+                    <strong id="pontuacao">0</strong>
+                </div>
+
+                <button class="btnIniciar">Iniciar Jogo</button>
+            </aside>
+        </div>
+    </main>
+</body>
+
+</html>
