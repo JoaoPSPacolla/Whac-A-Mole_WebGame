@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Partidas</title>
+    <link rel="stylesheet" href="../css/ranking.css">
+</head>
+
+<!-- fiz o reaproveitamento do código da página ranking.html para a página historico.html, alterando apenas o título e os dados da tabela, mantendo a mesma estrutura e estilo. -->
+
+<body>
+    <main class="paginaRanking">
+        <header class="topbar" aria-label="Navegação principal">
+            <div class="marca">
+                <span class="marcaIcone"></span>
+                <span>Acerte a topeira!</span>
+            </div>
+
+            <nav class="linksNavegacao" aria-label="Links principais">
+                <a href="home.html">Início</a>
+                <a href="../index.html" class="sair">Sair</a>
+            </nav>
+        </header>
+
+        <section class="painelRanking" aria-labelledby="ranking-title">
+            <div class="cabecalhoPainel">
+                <p class="rótulo">Tabela do Usuário</p>
+                <h1 id="ranking-title">Histórico</h1>
+            </div>
+
+            <div class="gradeEstatisticas" aria-label="Resumo do ranking">
+                <article class="cartaoEstatistica">
+                    <span class="rotuloCartao">Melhor desempenho</span>
+                    <strong>Partida n° 000002</strong>
+                </article>
+                <article class="cartaoEstatistica">
+                    <span class="rotuloCartao">Pontuação máxima</span>
+                    <strong>9.840</strong>
+                </article>
+                <article class="cartaoEstatistica">
+                    <span class="rotuloCartao">Nível mais alto</span>
+                    <strong>12</strong>
+                </article>
+            </div>
+
+            <div class="areaTabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Num. Partida</th>
+                            <th>Dimensão</th>
+                            <th>Modalidade</th>
+                            <th>Pontuação</th>
+                            <th>Nível</th>
+                            <th>Data/Hora</th>
+                        </tr>
+                    </thead>
+
+                    <!-- USADOS DADOS FICTICIOS PARA PREENCHER A TABELA -->
+
+                    <tbody id="rankingBody">
+                        <tr>
+                            <td>000002</td>
+                            <td>5x5</td>
+                            <td>Clássica</td> 
+                            <td>9.840</td>
+                            <td>12</td>
+                            <td>20/09/2026 18:45</td>
+                        </tr>
+                        <tr>
+                            <td>000001</td>
+                            <td>6x6</td>
+                            <td>Turbo</td>
+                            <td>9.120</td>
+                            <td>11</td>
+                            <td>19/09/2026 21:10</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
