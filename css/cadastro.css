@@ -11,7 +11,7 @@ input{
 }
 
 .cadastro{
-    background: aquamarine;
+    background: #ffffffb9;
     width: 500px;
     padding: 30px;
     /*display: flex;*/
@@ -21,7 +21,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f2f5;
+    background-color: #AAD05D;
+    min-height: 100vh; /* Faz o body ocupar toda a altura da tela */
+    margin: 0;
 }
 
 .containerBotao{
@@ -31,6 +33,9 @@ body{
 }
 
 .botao{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 40px;
     background-color: grey;
@@ -38,4 +43,6 @@ body{
     border: none;
     border-radius: 5px;
     font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
 }
