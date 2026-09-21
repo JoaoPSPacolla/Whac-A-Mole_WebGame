@@ -46,3 +46,8 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
+
+.aviso{
+    color: red;
+    font-style: italic;
+}
