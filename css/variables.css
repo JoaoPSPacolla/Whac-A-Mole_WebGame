@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --fonte-pixel: 'Press Start 2P', monospace;
+    --fonte-campos: Arial, sans-serif;
+
+    --cor-preto: #000000;
+    --cor-preto-profundo: #181818;
+    --cor-branco: #ffffff;
+    --cor-texto: #e0e0e0;
+    --cor-amarelo: #ffffa0;
+    --cor-cinza: #707070;
+    --cor-cinza-hover: #8b8b8b;
+    --cor-cinza-escuro: #383838;
+    --cor-verde: #38852a;
+    --cor-verde-hover: #439e32;
+    --cor-marrom: #7a5028;
+    --cor-borda-marrom: #2d1c0c;
+
+    --borda-padrao: 2px solid var(--cor-preto);
+    --borda-painel: 3px solid var(--cor-preto);
+    --sombra-pixel-cinza: inset 2px 2px 0 #adadad, inset -2px -2px 0 var(--cor-cinza-escuro);
+    --sombra-pixel-marrom: inset 2px 2px 0 #a06d3b, inset -2px -2px 0 #4a3018;
+
+    --fundo-login: url('../assets/imgs/MSA_Stage5_Login.jfif');
+    --fundo-home: url('../assets/imgs/download.gif');
+    --fundo-terra: url('../assets/imgs/Dirt_background_JE1.webp');
+    --fundo-madeira: url('../assets/imgs/1104863154.webp');
+    --fundo-tabuas: url('../assets/imgs/oak_planks.png');
+}

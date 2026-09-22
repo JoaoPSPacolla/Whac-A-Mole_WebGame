@@ -14,8 +14,8 @@ body {
     background-size: cover;
 }
 
-/* Formulario */
-.cadastro {
+/* Formulario de dados da conta */
+.conta {
     background-color: #e2ded7;
     width: 100%;
     max-width: 480px;
@@ -24,12 +24,19 @@ body {
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* Campos de entrada */
+/* Campos de entrada e avisos */
 label {
     display: inline-block;
     font-size: 0.6rem;
     color: #2b2b2b;
     margin-bottom: 6px;
+}
+
+.aviso {
+    color: #aa0000;
+    font-size: 0.5rem;
+    display: inline-block;
+    margin-bottom: 4px;
 }
 
 input {
@@ -43,7 +50,14 @@ input {
     font-size: 0.85rem;
 }
 
-input:focus {
+input[readonly] {
+    background-color: #c8c3b8;
+    color: #555555;
+    border-color: #888888;
+    cursor: not-allowed;
+}
+
+input:focus:not([readonly]) {
     outline: none;
     border-color: #38852a;
 }

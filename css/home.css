@@ -1,166 +1,95 @@
+/* Reset e tipografia */
 * {
     box-sizing: border-box;
 }
-
-/* clamp(mínimo, ideal, máximo) */
 
 html, body {
     height: 100%;
     margin: 0;
     overflow: hidden; /* remove a rolagem */
+    font-family: var(--fonte-pixel);
 }
 
-body{
-    background-color: #AAD05D;
+/* Fundo animado */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-header{
-    margin: 30px;
+body::before {
+    content: "";
+    position: fixed;
+    inset: -12px;
+    background-image: var(--fundo-home);
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    z-index: -1;
 }
 
-header p{
-    font-size: clamp(1rem, 1.8vw, 3rem); 
-}
-
+/* Estrutura principal */
 main {
-    height: 100dvh;
+    width: 100%;
+    max-width: 440px;
     display: flex;
     flex-direction: column;
-    padding: clamp(20px, 4vw, 80px); 
+    align-items: center;
+    padding: 20px;
 }
 
+/* Cabecalho */
 header {
-    margin: 0 0 20px;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-h1{
-    font-size: clamp(2rem, 3.5vw, 6rem);
+header p {
+    font-size: 0.75rem;
+    color: #ffffa0;
+    text-shadow: 2px 2px 0 #000;
+    margin: 5px;
 }
 
-/* Classes e IDS */
-
+/* Menu de navegacao */
 .menu {
-    height: 60%;           
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Criar 4 colunas */
-    grid-template-rows: repeat(2, 1fr); /* Cria 2 linhas */
-    gap: clamp(16px, 2.5vw, 50px);    
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
 }
 
 .paginas {
-    position: relative;
-    overflow: hidden;
-    min-width: 0;
-    min-height: 0;
-    border: 1px solid black;
-    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    background-color: #707070;
+    text-decoration: none;
+    border: 2px solid #000;
+    box-shadow: inset 2px 2px 0 #adadad, inset -2px -2px 0 #383838;
 }
 
-.paginas img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: clamp(12px, 2vw, 70px);          
-    padding-bottom: clamp(44px, 4vw, 70px); 
+.paginas:hover {
+    background-color: #8b8b8b;
+    box-shadow: inset 2px 2px 0 #c6c6c6, inset -2px -2px 0 #2a2a2a;
 }
 
-#imagJogar {
-    padding: 0;
-    padding: 0;
-    object-fit: cover;
-    object-position: left center;  /* mantém a máquina e corta a direita */
-}
-
-#ranking   { background-color: #5b2a9e; }  
-#historico { background-color: #0d1b4c; } 
-#conta     { background-color: #1f9aff; } 
-#sair      { background-color: #b31d1d; }  
-
-/* Texto sobre a foto */
+/* Texto dos botoes */
 .titulo_PG {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: clamp(10px, 1.4vw, 20px);      
-    font-size: clamp(1.2rem, 1.7vw, 5.8rem); 
-    color: #f7f7f7;
-    font-weight: bold;
+    color: #e0e0e0;
+    font-size: 0.75rem;
+    text-shadow: 2px 2px 0 #202020;
 }
 
-.tile__hint {
-    display: block;
-    font-weight: normal;
-    font-size: 0.875rem;
+.paginas:hover .titulo_PG {
+    color: #ffffa0;
 }
 
-#jogar{
-    grid-column: 1 / span 2; 
-    grid-row: 1 / span 2; 
+#jogar, #ranking, #historico {
+    grid-column: 1 / -1;
 }
 
-
-/* Telas menores */
-@media (max-width: 1100px) {
-
-    /* Permite rolagem só se os blocos não couberem na tela */
-    html, body {
-        overflow: auto;
-    }
-
-    main {
-        height: auto;
-        min-height: 100dvh;
-        padding: 20px;
-    }
-
-    /* Cabeçalho */
-    header {
-        margin-bottom: 16px;
-    }
-
-    h1 {
-        font-size: clamp(2rem, 6vw, 3.5rem);
-    }
-
-    header p {
-        font-size: clamp(1rem, 3vw, 1.6rem);
-    }
-
-    /* Um bloco embaixo do outro, todos do mesmo tamanho */
-    .menu {
-        flex: 1;                                        /* ocupa a altura que sobra */
-        height: auto;
-        min-height: 0;
-        grid-template-columns: 1fr;                     /* uma coluna só */
-        grid-template-rows: repeat(5, minmax(120px, 1fr));  /* mínimo de 120px por bloco */
-        gap: 12px;
-    }
-
-    /* Cancela o "span 2" do desktop */
-    #jogar {
-        grid-column: auto;
-        grid-row: auto;
-    }
-
-    /* Ícones menores, deixando espaço embaixo para o texto */
-    .paginas img {
-        padding: 10px 10px 44px;
-    }
-
-    /* Foto do Jogar preenche o bloco (que fica mais largo que alto) */
-    #imagJogar {
-        padding: 0;
-        object-fit: cover;
-    }
-
-    /* Texto dos blocos */
-    .titulo_PG,
-    #jogar .titulo_PG {
-        font-size: clamp(1.3rem, 4vw, 2.2rem);
-        padding: 10px 14px;
-    }
+#conta, #sair {
+    grid-column: auto;
 }

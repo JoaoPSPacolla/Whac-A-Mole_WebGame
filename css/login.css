@@ -1,4 +1,4 @@
-/* Setups gerais */
+/* Reset e tipografia */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -6,6 +6,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  font-family: var(--fonte-pixel);
 }
 
 body {
@@ -13,64 +14,40 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #AAD05D;
+  background-image: var(--fundo-login);
+  background-size: cover;
 }
 
-input[type="text"], 
-input[type="password"] {
-  width: 100%;
-  border: 2px solid darkblue;
-  padding: 11px;
+/* Card de login */
+.caixaFoto {
+  display: none;
 }
-
-input[type="checkbox"] {
-  width: auto;
-  margin: 0;
-}
-
-/* Containers */
-
 
 .caixaLogin {
-  border: 1px solid black;
   width: 100%;
-  max-width: 570px; /* Define o tamanho máximo ideal do card */
-  background-color: #ffffffb9;
-  height: 70%;
+  max-width: 460px;
+  background-color: #313131;
+  border: 3px solid #181818;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.6);
+  color: #ffffff;
 }
 
-.caixaFoto {
-  width: 100%;
-  height: 240px; /* Proporção ajustada para a foto */
-}   
-
-.caixaFoto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.opcoesLogin p, 
-.opcoesLogin label {
-  margin: 0;
-}
-
+/* Campos de entrada */
 .caixaTexto {
-  padding: 25px 35px 35px 35px; /* Recuo reduzido: o espaço dos campos aumenta */
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
 }
 
-/* Elementos de login */
-
-.opcoesLogin {
-  display: flex;
-  justify-content: space-between; /* Empurra um item para cada ponta do input */
-  width: 100%;                    
-  margin-top: 5px;  
-  align-items: center;              
+.caixaTexto h1 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+  color: var(--cor-branco);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000;
 }
 
 .campoInput {
@@ -80,8 +57,19 @@ input[type="checkbox"] {
 
 .campoInput input {
   width: 100%;
-  padding-left: 40px;
+  height: 42px;
+  padding-left: 42px;
   padding-right: 12px;
+  font-family: var(--fonte-campos);
+  font-size: 0.9rem;
+  border: 2px solid #181818;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.campoInput input:focus {
+  outline: none;
+  border-color: #02a849;
 }
 
 .iconeInput {
@@ -92,48 +80,74 @@ input[type="checkbox"] {
   width: 20px;           
   height: 20px;          
   pointer-events: none;
+  filter: brightness(0) invert(1);
+}
+
+/* Opcoes e links auxiliares */
+.opcoesLogin {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;                    
+  align-items: center;              
+  font-size: 0.55rem;
+  color: #d0d0d0;
+}
+
+.opcoesLogin p, 
+.opcoesLogin label {
+  margin: 0;
 }
 
 #lembrarLogin {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   cursor: pointer;
+}
+
+#esqueceuSenha {
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#esqueceuSenha:hover {
+  color: #02a849;
 }
 
 button {
   width: 100%;
-  padding: 10px;
+  height: 46px;
+  background-color: #02a849;
+  color: var(--cor-branco);
+  border: 2px solid #00441b;
+  font-family: var(--fonte-pixel);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  box-shadow: inset 2px 2px 0 #1df273, inset -2px -2px 0 #005f28;
+  text-shadow: 2px 2px 0 #000000;
   cursor: pointer;
+  margin-top: 8px;
 }
 
-/* Corrigido para maiúsculo (igual ao ID do HTML) */
+button:hover {
+  background-color: #03be53;
+}
+
+button:active {
+  background-color: #018e3e;
+  box-shadow: inset -2px -2px 0 #1df273, inset 2px 2px 0 #005f28;
+}
+
 #semConta {
-  align-self: flex-end;
+  align-self: center;
+  color: #ffffff;
+  font-size: 0.6rem;
   text-decoration: underline;
   cursor: pointer;
-  margin: 0;
+  margin-top: 4px;
 }
 
-/* Estilos aplicados apenas em celulares (telas de até 767px) */
-@media screen and (max-width: 767px) {
-  body {
-    padding: 15px;
-  }
-
-  .caixaTexto {
-    padding: 20px;
-  }
-
-  .caixaFoto {
-    height: 180px;
-  }
-}
-
-/* Estilos aplicados apenas em telas de desktop (a partir de 1024px) */
-@media screen and (min-width: 2024px) {
-    .caixaFoto {
-    width: 100%;
-    height: 450px;
-    }   
+#semConta:hover {
+  color: #02a849;
 }

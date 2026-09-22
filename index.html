@@ -1,34 +1,40 @@
-<html>
-    <head> 
-        <title>Login</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/login.css">
-    </head>
-    <body>  
-        <div class="caixaLogin">
-            <div class="caixaFoto">
-                <img src="assets/imgs/toupeira.png" alt="Foto de login">   
-            </div>
-            <div class="caixaTexto">
-                <h4> Login </h4>    
-                <div class="campoInput">
-                    <input type="text" placeholder="Usuário">
-                    <img src="assets/icones/user.png" alt="Ícone usuário" class="iconeInput">
-                </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-                <div class="campoInput">
-                    <input type="password" placeholder="Senha">
-                    <img src="assets/icones/cadeado-trancado.png" alt="Ícone senha" class="iconeInput">
-                </div>
-                <div class="opcoesLogin">
-                    <label id="lembrarLogin">
-                        <input type="checkbox" name="lembrar"> Lembrar de mim
-                    </label>
-                    <p id="esqueceuSenha"> Esqueci minha senha </p>
-                </div>
-                <button onclick="window.location.href='pages/home.html'"> Entrar </button>
-                 <a href="pages/cadastro.html" id="semConta"> Não tenho conta </a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <main class="caixaLogin">
+        <div class="caixaTexto">
+            <h1>Login</h1>
+
+            <div class="campoInput">
+                <input type="text" placeholder="Usuário">
+                <img src="assets/icones/user.png" alt="Ícone usuário" class="iconeInput">
             </div>
+
+            <div class="campoInput">
+                <input type="password" placeholder="Senha">
+                <img src="assets/icones/cadeado-trancado.png" alt="Ícone senha" class="iconeInput">
+            </div>
+
+            <div class="opcoesLogin">
+                <label id="lembrarLogin">
+                    <input type="checkbox" name="lembrar"> Lembrar de mim
+                </label>
+                <p id="esqueceuSenha">Esqueci minha senha</p>
+            </div>
+
+            <button type="button" onclick="window.location.href='pages/home.html'">Entrar</button>
+            <a href="pages/cadastro.html" id="semConta">Não tenho conta</a>
         </div>
-    </body>
+    </main>
+</body>
+
 </html>

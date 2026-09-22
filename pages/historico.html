@@ -5,32 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de Partidas</title>
-    <link rel="stylesheet" href="../css/ranking.css">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/historico.css">
 </head>
 
-<!-- fiz o reaproveitamento do código da página ranking.html para a página historico.html, alterando apenas o título e os dados da tabela, mantendo a mesma estrutura e estilo. -->
-
 <body>
-    <main class="paginaRanking">
+    <main class="paginaHistorico">
         <header class="topbar" aria-label="Navegação principal">
             <div class="marca">
-                <span class="marcaIcone"></span>
-                <span>Acerte a topeira!</span>
+                <span>Acerte a toupeira!</span>
             </div>
 
             <nav class="linksNavegacao" aria-label="Links principais">
-                <a href="home.html">Início</a>
-                <a href="../index.html" class="sair">Sair</a>
+                <a href="jogo.html">Jogar</a>
+                <a href="conta.html">Perfil</a>
+                <a href="ranking.html">Ranking</a>
+                <a href="../index.html">Sair</a>
             </nav>
         </header>
 
-        <section class="painelRanking" aria-labelledby="ranking-title">
+        <section class="painelHistorico" aria-labelledby="historico-title">
             <div class="cabecalhoPainel">
                 <p class="rótulo">Tabela do Usuário</p>
-                <h1 id="ranking-title">Histórico</h1>
+                <h1 id="historico-title">Histórico</h1>
             </div>
 
-            <div class="gradeEstatisticas" aria-label="Resumo do ranking">
+            <div class="gradeEstatisticas" aria-label="Resumo do histórico">
                 <article class="cartaoEstatistica">
                     <span class="rotuloCartao">Melhor desempenho</span>
                     <strong>Partida n° 000002</strong>
@@ -60,9 +60,7 @@
                         </tr>
                     </thead>
 
-                    <!-- USADOS DADOS FICTICIOS PARA PREENCHER A TABELA -->
-
-                    <tbody id="rankingBody">
+                    <tbody>
                         <tr>
                             <td>000002</td>
                             <td>Neymar Jr</td>
