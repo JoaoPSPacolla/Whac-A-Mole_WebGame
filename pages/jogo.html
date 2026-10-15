@@ -7,6 +7,7 @@
     <title>Acerte a Toupeira - Jogo</title>
     <link rel="stylesheet" href="../css/variaveis.css">
     <link rel="stylesheet" href="../css/jogo.css">
+    <script src="../js/jogo.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,10 @@
             </nav>
         </header>
 
+        <!--
+        Para poder fazer a lógica do jogo , o que pensei foi trocar todas as imagens pelo hole aqui no HTML
+        Aí, no javascript seria feito algo randomico para ficar trocando as imagens 
+        -->
         <div class="conteudoJogo">
             <div class="containerJogo">
                 <div class="gradeJogo">
@@ -31,28 +36,28 @@
                         <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
                     </div>
                     <div class="buraco">
-                        <img src="../assets/imgs/steve.png" alt="Buraco com Steve" class="imgElemento">
+                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
                     </div>
                     <div class="buraco">
                         <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
                     </div>
                     <div class="buraco">
-                        <img src="../assets/imgs/steve.png" alt="Buraco com Steve" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/creeper.png" alt="Buraco com Bomba" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/steve.png" alt="Buraco com Steve" class="imgElemento">
+                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
                     </div>
                     <div class="buraco">
                         <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
                     </div>
                     <div class="buraco">
-                        <img src="../assets/imgs/smoke.png" alt="Buraco explosão" class="imgElemento">
+                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
                     </div>
                     <div class="buraco">
-                        <img src="../assets/imgs/steve.png" alt="Buraco com Steve" class="imgElemento">
+                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
+                    </div>
+                    <div class="buraco">
+                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
                     </div>
                 </div>
             </div>
@@ -73,7 +78,7 @@
                     <strong id="proximo">100</strong>
                 </div>
 
-                <button type="button" class="btnIniciar">Iniciar jogo</button>
+                <button type="button" class="btnIniciar" onclick="iniciar()">Iniciar jogo</button>
             </div>
         </div>
     </main>
