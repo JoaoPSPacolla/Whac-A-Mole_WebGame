@@ -11,17 +11,17 @@
 </head>
 
 <body>
-    <main class="caixaLogin">
-        <div class="caixaTexto">
+     <main class="caixaLogin">   
+        <form class="caixaTexto" onsubmit="window.location.href='pages/home.html'; return false;">
             <h1>Login</h1>
 
             <div class="campoInput">
-                <input type="text" placeholder="Usuário">
+                <input type="text" placeholder="Usuário" required>
                 <img src="assets/icones/user.png" alt="Ícone usuário" class="iconeInput">
             </div>
 
             <div class="campoInput">
-                <input type="password" placeholder="Senha">
+                <input type="password" placeholder="Senha" required>
                 <img src="assets/icones/cadeado-trancado.png" alt="Ícone senha" class="iconeInput">
             </div>
 
@@ -32,9 +32,9 @@
                 <p id="esqueceuSenha" onclick="mensagem()">Esqueci minha senha</p>
             </div>
 
-            <button type="button" onclick="window.location.href='pages/home.html'">Entrar</button>
+            <button type="submit">Entrar</button>
             <a href="pages/cadastro.html" id="semConta">Não tenho conta</a>
-        </div>
+        </form>
     </main>
 </body>
 
