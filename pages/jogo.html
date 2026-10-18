@@ -7,7 +7,7 @@
     <title>Acerte a Toupeira - Jogo</title>
     <link rel="stylesheet" href="../css/variaveis.css">
     <link rel="stylesheet" href="../css/jogo.css">
-    <script src="../js/jogo.js"></script>
+    <script src="../js/modoExplosivo.js" defer></script> <!-- Sem esse defer o código não contabiliza os pontos de clique no javascritp do jogo. Não sei o porquê-->
 </head>
 
 <body>
@@ -65,12 +65,17 @@
             <div class="painelStatus">
                 <div class="cartaoStatus">
                     <span class="rotuloStatus">Tempo Restante</span>
-                    <strong id="timer">00:60</strong>
+                    <strong id="timer"></strong>
                 </div>
 
                 <div class="cartaoStatus">
                     <span class="rotuloStatus">Pontuação</span>
                     <strong id="pontuacao">0</strong>
+                </div>
+
+                <div class="cartaoStatus">
+                    <span class="rotuloStatus">Quantidade toupeiras</span>
+                    <strong id="quantidadeToupeiras">0</strong>
                 </div>
 
                 <div class="cartaoStatus">
