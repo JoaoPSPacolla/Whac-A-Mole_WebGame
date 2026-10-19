@@ -37,6 +37,16 @@ body {
     text-shadow: 2px 2px 0 #000;
 }
 
+select{
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1rem;
+    padding: 8px 12px;
+    background-color: #707070;
+    border: 2px solid #000;
+    box-shadow: inset 2px 2px 0 #adadad, inset -2px -2px 0 #383838;
+}
+
 .linksNavegacao {
     display: flex;
     gap: 8px;
