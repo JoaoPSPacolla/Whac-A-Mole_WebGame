@@ -231,36 +231,3 @@ function trocarFoto() {
         }
     }, fase.tempoVisivel);
 }
-
-// Registra os eventos de clique nas imagens.
-document.querySelectorAll(".imgElemento").forEach(function (imagem) {
-    imagem.addEventListener("click", clicarElemento);
-});
-
-// Trata os cliques em toupeiras e bombas.
-function clicarElemento(evento) {
-    if (!jogoAtivo) {
-        return;
-    }
-
-    const imagem = evento.currentTarget;
-
-    if (imagem.dataset.ocupado !== "true") {
-        return;
-    }
-
-    if (imagem.alt === "Toupeira") {
-        pontuacao++;
-    } else if (imagem.alt === "Bomba") {
-        pontuacao--;
-    } else {
-        return;
-    }
-
-    document.getElementById("pontuacao").textContent = pontuacao;
-
-    // Faz o personagem desaparecer imediatamente.
-    imagem.src = "../assets/imgs/hole.png";
-    imagem.alt = "Buraco Vazio";
-    imagem.dataset.ocupado = "false";
-}

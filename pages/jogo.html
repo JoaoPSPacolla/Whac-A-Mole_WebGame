@@ -7,6 +7,7 @@
     <title>Acerte a Toupeira - Jogo</title>
     <link rel="stylesheet" href="../css/variaveis.css">
     <link rel="stylesheet" href="../css/jogo.css">
+    <script src="../js/alocacaoTabuleiro.js"></script>
     <script src="../js/modoExplosivo.js" defer></script> <!-- Sem esse defer o código não contabiliza os pontos de clique no javascritp do jogo. Não sei o porquê-->
 </head>
 
@@ -42,34 +43,8 @@
         -->
         <div class="conteudoJogo">
             <div class="containerJogo">
-                <div class="gradeJogo">
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
-                    <div class="buraco">
-                        <img src="../assets/imgs/hole.png" alt="Buraco Vazio" class="imgElemento">
-                    </div>
+                <div class="gradeJogo" id="gradeJogo">
+                    <!-- Aqui é onde o javascript vai criar os buracos do jogo -->
                 </div>
             </div>
 
