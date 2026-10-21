@@ -1,4 +1,4 @@
-/* Reset e tipografia */
+/* Base e tipografia */
 * {
     box-sizing: border-box;
 }
@@ -9,7 +9,7 @@ body {
     font-family: var(--fonte-pixel);
     background-image: var(--fundo-terra);
     background-size: cover;
-    color: #e0e0e0;
+    color: var(--cor-texto);
 }
 
 .paginaJogo {
@@ -26,25 +26,15 @@ body {
     background-image: var(--fundo-madeira);
     background-repeat: repeat;
     background-size: 64px 64px;
-    border: 3px solid #2d1c0c;
-    box-shadow: inset 2px 2px 0 #a06d3b, inset -2px -2px 0 #4a3018;
+    border: var(--borda-painel) var(--cor-borda-marrom);
+    box-shadow: var(--sombra-pixel-marrom);
     margin-bottom: 20px;
 }
 
 .marca {
     font-size: 0.8rem;
-    color: #ffffa0;
-    text-shadow: 2px 2px 0 #000;
-}
-
-select{
-    text-decoration: none;
-    color: #e0e0e0;
-    font-size: 1rem;
-    padding: 8px 12px;
-    background-color: #707070;
-    border: 2px solid #000;
-    box-shadow: inset 2px 2px 0 #adadad, inset -2px -2px 0 #383838;
+    color: var(--cor-amarelo);
+    text-shadow: 2px 2px 0 var(--cor-preto);
 }
 
 .linksNavegacao {
@@ -54,17 +44,17 @@ select{
 
 .linksNavegacao a {
     text-decoration: none;
-    color: #e0e0e0;
+    color: var(--cor-texto);
     font-size: 0.65rem;
     padding: 8px 12px;
-    background-color: #707070;
-    border: 2px solid #000;
-    box-shadow: inset 2px 2px 0 #adadad, inset -2px -2px 0 #383838;
+    background-color: var(--cor-cinza);
+    border: var(--borda-padrao);
+    box-shadow: var(--sombra-pixel-cinza);
 }
 
 .linksNavegacao a:hover {
-    background-color: #8b8b8b;
-    color: #ffffa0;
+    background-color: var(--cor-cinza-hover);
+    color: var(--cor-amarelo);
 }
 
 /* Layout principal */
@@ -82,7 +72,8 @@ select{
 
 /* Tabuleiro */
 .containerJogo {
-    background-image: url('../assets/imgs/grass.png');
+    position: relative; /* prende menu, vitória e morte dentro do tabuleiro */
+    background-image: var(--fundo-grama);
     background-size: cover;
     background-position: center;
     border: 12px solid #6a4320;
@@ -93,12 +84,25 @@ select{
     align-items: center;
 }
 
+/* Grid dinâmico */
 .gradeJogo {
+    --n: 3;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(var(--n), 1fr);
+    gap: calc(24px - var(--n) * 2px);
     width: 100%;
-    max-width: 420px;
+    max-width: calc(320px + var(--n) * 45px);
+    transition: max-width 0.3s ease;
+}
+
+.gradeJogo .buraco {
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.gradeJogo[data-tamanho="2"] .buraco,
+.gradeJogo[data-tamanho="3"] .buraco {
+    padding: 12px;
 }
 
 .imgElemento {
@@ -116,9 +120,9 @@ select{
 }
 
 .cartaoStatus {
-    background-color: #7a5028;
-    border: 3px solid #2d1c0c;
-    box-shadow: inset 2px 2px 0 #a06d3b, inset -2px -2px 0 #4a3018;
+    background-color: var(--cor-marrom);
+    border: var(--borda-painel) var(--cor-borda-marrom);
+    box-shadow: var(--sombra-pixel-marrom);
     padding: 12px;
     text-align: center;
 }
@@ -133,21 +137,144 @@ select{
 
 .cartaoStatus strong {
     font-size: 1.1rem;
-    color: #000000;
+    color: var(--cor-preto);
     text-shadow: 1px 1px 0 #a06d3b;
 }
 
-.btnIniciar {
-    padding: 12px;
-    font-family: var(--fonte-pixel);
-    background-color: #707070;
-    color: #e0e0e0;
-    border: 2px solid #000;
-    box-shadow: inset 2px 2px 0 #adadad, inset -2px -2px 0 #383838;
+/* Overlays de vitória e derrota */
+.overlay-tabuleiro-minecraft {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border-radius: 4px;
 }
 
-.btnIniciar:hover {
-    background-color: #8b8b8b;
-    color: #ffffa0;
+.overlay-vitoria {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        var(--fundo-vitoria);
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay-derrota {
+    background-color: var(--cor-fundo-derrota);
+}
+
+/* Conteúdo das telas de resultado */
+.caixa-menu-minecraft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 90%;
+    max-width: 320px;
+    padding: 10px;
+}
+
+.caixa-resultado {
+    max-width: 380px;
+    gap: 10px;
+}
+
+.titulo-menu-minecraft {
+    color: var(--cor-branco);
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 0 var(--cor-sombra-texto);
+    margin: 0 0 6px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.overlay-vitoria .titulo-menu-minecraft {
+    color: var(--cor-sucesso);
+    font-size: 1.8rem;
+    text-shadow: 3px 3px 0 var(--cor-preto);
+    margin-bottom: 0;
+}
+
+.overlay-derrota .titulo-menu-minecraft {
+    font-size: 2rem;
+    text-shadow: 3px 3px 0 var(--cor-preto);
+    margin-bottom: 0;
+}
+
+.destaque-resultado {
+    color: var(--cor-branco);
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 var(--cor-preto);
+    margin: 0 0 4px 0;
+}
+
+.destaque-resultado span {
+    color: var(--cor-amarelo-vivo);
+}
+
+.stats-resultado {
+    color: var(--cor-texto);
+    font-size: 0.75rem;
+    text-align: center;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 0 var(--cor-preto);
+    line-height: 1.5;
+}
+
+.stats-resultado p {
+    margin: 2px 0;
+}
+
+.stat-sucesso { color: var(--cor-sucesso); }
+.stat-falha   { color: var(--cor-erro); }
+
+/* Opções do menu */
+.grupo-opcao-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+}
+
+.rotulo-opcao-menu {
+    color: var(--cor-texto);
+    font-size: 0.75rem;
+    text-shadow: 1px 1px 0 var(--cor-preto);
+}
+
+/* Botões e selects do menu */
+.btn-mc,
+.select-mc {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: var(--cor-cinza);
+    color: var(--cor-texto);
+    font-family: inherit;
+    font-size: 0.85rem;
+    border: var(--borda-padrao);
+    box-shadow: var(--sombra-pixel-cinza);
     cursor: pointer;
+    text-shadow: 1px 1px 0 #202020;
+    text-align: center;
+}
+
+.btn-mc:hover,
+.select-mc:hover {
+    background-color: var(--cor-cinza-hover);
+    color: var(--cor-amarelo);
+}
+
+.btn-jogar {
+    margin-top: 6px;
+}
+
+.select-mc option {
+    background-color: var(--cor-cinza-escuro);
+    color: var(--cor-branco);
+}
+
+.menu-oculto {
+    display: none !important;
 }

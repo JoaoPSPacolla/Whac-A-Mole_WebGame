@@ -54,6 +54,7 @@ function iniciarFase() {
     pontuacao = 0;
     toupeirasAparecidas = 0;
 
+    document.getElementById("nivel").textContent = faseAtual + 1;
     document.getElementById("pontuacao").textContent = 0;
     document.getElementById("quantidadeToupeiras").textContent = 0;
 
@@ -129,39 +130,37 @@ function checarProgresso() {
     const aproveitamentoFormatado = aproveitamento.toFixed(2);
 
     if (aproveitamento >= fase.percentualMinimo) {
-        if (faseAtual === FASES.length - 1) {
-            alert(
-                "Parabéns! Você venceu todas as fases!\n\n" +
-                "Fase concluída: " + (faseAtual + 1) + "\n" +
-                "Pontuação: " + pontuacao + "\n" +
-                "Toupeiras que apareceram: " + toupeirasAparecidas + "\n" +
-                "Aproveitamento: " + aproveitamentoFormatado + "%"
+        if (typeof window.exibirTelaVitoria === "function") {
+            window.exibirTelaVitoria(
+                {
+                    fase: faseAtual + 1,
+                    pontuacao: pontuacao,
+                    toupeiras: toupeirasAparecidas,
+                    aproveitamento: aproveitamentoFormatado,
+                    meta: fase.percentualMinimo
+                },
+                function () {
+                    faseAtual++;
+                    iniciarFase();
+                }
             );
-
-            return;
+        } else {
+            faseAtual++;
+            iniciarFase();
         }
-
-        alert(
-            "Parabéns! Você avançou para a próxima fase!\n\n" +
-            "Fase concluída: " + (faseAtual + 1) + "\n" +
-            "Você acertou uma pontuação de " + pontuacao + "\n" +
-            "Toupeiras que apareceram: " + toupeirasAparecidas + "\n" +
-            "Aproveitamento: " + aproveitamentoFormatado + "%\n" +
-            "Meta atingida: " + fase.percentualMinimo + "%"
-        );
-
-        faseAtual++;
-        iniciarFase();
-
     } else {
-        alert(
-            "Fim de jogo! Você não atingiu a meta.\n\n" +
-            "Fase: " + (faseAtual + 1) + "\n" +
-            "Pontuação: " + pontuacao + "\n" +
-            "Toupeiras que apareceram: " + toupeirasAparecidas + "\n" +
-            "Aproveitamento: " + aproveitamentoFormatado + "%\n" +
-            "Meta necessária: " + fase.percentualMinimo + "%"
-        );
+        // Substituído o alert tradicional pela Tela de Morte do Minecraft
+        if (typeof window.exibirTelaDerrota === "function") {
+            window.exibirTelaDerrota({
+                fase: faseAtual + 1,
+                pontuacao: pontuacao,
+                toupeiras: toupeirasAparecidas,
+                aproveitamento: aproveitamentoFormatado,
+                meta: fase.percentualMinimo
+            });
+        } else {
+            alert("Fim de jogo! Você não atingiu a meta.");
+        }
     }
 }
 

@@ -7,7 +7,8 @@
     <title>Acerte a Toupeira - Jogo</title>
     <link rel="stylesheet" href="../css/variaveis.css">
     <link rel="stylesheet" href="../css/jogo.css">
-    <script src="../js/alocacaoTabuleiro.js"></script>
+    <script src="../js/menuJogo.js" defer></script>
+    <script src="../js/alocacaoTabuleiro.js" defer></script>
     <script src="../js/modoExplosivo.js" defer></script> <!-- Sem esse defer o código não contabiliza os pontos de clique no javascritp do jogo. Não sei o porquê-->
 </head>
 
@@ -17,16 +18,6 @@
             <div class="marca">
                 <span>Acerte a toupeira!</span>
             </div>
-
-            <select id="tamanho">
-                <option value="2x2">2 x 2 (4 buracos)</option>
-                <option value="3x3">3 x 3 (9 buracos)</option>
-                <option value="4x4">4 x 4 (16 buracos)</option>
-                <option value="5x5">5 x 5 (25 buracos)</option>
-                <option value="6x6">6 x 6 (36 buracos)</option>
-                <option value="7x7">7 x 7 (49 buracos)</option>
-                <option value="8x8">8 x 8 (64 buracos)</option>               
-            </select>
 
             <nav class="linksNavegacao">
                 <a href="home.html">Home</a>
@@ -68,9 +59,11 @@
                     <span class="rotuloStatus">Próxima Meta</span>
                     <strong id="proximo">100</strong>
                 </div>
-
-                <button type="button" class="btnIniciar" onclick="iniciar()">Iniciar jogo</button>
-            </div>
+                
+                <div class="cartaoStatus">
+                    <span class="rotuloStatus">Nível</span>
+                    <strong id="nivel">1</strong>
+                </div>
         </div>
     </main>
 </body>

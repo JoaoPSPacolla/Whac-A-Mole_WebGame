@@ -16,6 +16,11 @@
     --cor-verde-hover: #439e32;
     --cor-marrom: #7a5028;
     --cor-borda-marrom: #2d1c0c;
+    --cor-amarelo-vivo: #ffff55;
+    --cor-sucesso: #55ff55;
+    --cor-erro: #ff5555;
+    --cor-sombra-texto: #3f3f3f;
+    --cor-fundo-derrota: rgba(158, 18, 18, 0.7);
 
     --borda-padrao: 2px solid var(--cor-preto);
     --borda-painel: 3px solid var(--cor-preto);
@@ -27,4 +32,6 @@
     --fundo-terra: url('../assets/imgs/Dirt_background_JE1.webp');
     --fundo-madeira: url('../assets/imgs/1104863154.webp');
     --fundo-tabuas: url('../assets/imgs/oak_planks.png');
+    --fundo-grama: url('../assets/imgs/grass.png');
+    --fundo-vitoria: url('../assets/imgs/vitoria.jpg');
 }

@@ -1,10 +1,10 @@
 // Tive que colocar essa função porque o grid não estava sendo gerado, mas resolveu.
 document.addEventListener('DOMContentLoaded', function() {
     
-    const selectTamanho = document.getElementById('tamanho');
+    const tamanho = document.getElementById("selectTamanhoMenu");
     const gradeJogo = document.getElementById('gradeJogo');
 
-    if (!selectTamanho || !gradeJogo) {
+    if (!tamanho || !gradeJogo) {
         console.error("Erro: Não encontrou o select de tamanho ou a gradeJogo no HTML.");
         return; 
     }
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    gerarTabuleiro(selectTamanho.value);
+    gerarTabuleiro(tamanho.value);
 
-    selectTamanho.addEventListener('change', function(evento) {
+    tamanho.addEventListener('change', function(evento) {
         gerarTabuleiro(evento.target.value);
     });
 
