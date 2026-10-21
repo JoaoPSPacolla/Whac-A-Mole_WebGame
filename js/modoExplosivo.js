@@ -20,13 +20,13 @@ const FASES = [
     {
         duracao: 30000,
         tempoVisivel: 1100,
-        tempoEntreAparicoes: 900,
+        tempoEntreAparicoes: 800,
         percentualMinimo: 75
     },
     {
         duracao: 30000,
-        tempoVisivel: 700,
-        tempoEntreAparicoes: 600,
+        tempoVisivel: 500,
+        tempoEntreAparicoes: 400,
         percentualMinimo: 80
     }
 ];

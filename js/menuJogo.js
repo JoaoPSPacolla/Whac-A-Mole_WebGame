@@ -164,23 +164,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function iniciarJogo() {
+    const modoEscolhido = selectModo.value;
+
+    if (modoEscolhido === "normal") {
+        if (typeof iniciarNormal !== "function") {
+            console.error("A função iniciarNormal() não foi encontrada.");
+            return false;
+        }
+        iniciarNormal();
+    } else {
         if (typeof iniciar !== "function") {
             console.error("A função iniciar() não foi encontrada.");
             return false;
         }
         iniciar();
-        return true;
+    }
+
+    return true;
     }
 
     function iniciarPeloMenu() {
-        // Verifica ANTES de esconder o menu, para o usuário nunca ficar preso.
-        if (typeof iniciar !== "function") {
-            console.error("A função iniciar() não foi encontrada.");
+        const modoEscolhido = selectModo.value;
+        const funcaoExiste = modoEscolhido === "normal"
+            ? typeof iniciarNormal === "function"
+            : typeof iniciar === "function";
+
+        if (!funcaoExiste) {
+            console.error("A função do modo selecionado não foi encontrada.");
             return;
         }
 
         ocultarMenu();
-
         iniciarJogo();
     }
 

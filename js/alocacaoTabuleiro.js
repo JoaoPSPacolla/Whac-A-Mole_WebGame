@@ -56,7 +56,6 @@ document.getElementById("gradeJogo").addEventListener("click", function(evento) 
             return;
         }
 
-        // Mudamos de currentTarget para target, pois o target é exatamente o elemento clicado
         const imagem = evento.target;
 
         if (imagem.dataset.ocupado !== "true") {
@@ -65,17 +64,33 @@ document.getElementById("gradeJogo").addEventListener("click", function(evento) 
 
         if (imagem.alt === "Toupeira") {
             pontuacao++;
+
+            // Marca como não ocupado já aqui, para não poder clicar de novo nela
+            imagem.dataset.ocupado = "false";
+
+            // Mostra a imagem de acerto
+            imagem.src = "../assets/imgs/steveAcertado.png";
+            imagem.alt = "Toupeira Acertada";
+
+            // Depois de um tempinho, volta para o buraco vazio
+            setTimeout(function () {
+                imagem.src = "../assets/imgs/hole.png";
+                imagem.alt = "Buraco Vazio";
+            }, 300); // tempo em milissegundos que o "acertou" fica na tela
+
         } else if (imagem.alt === "Bomba") {
             pontuacao--;
+            imagem.dataset.ocupado = "false";
+            imagem.src = "../assets/imgs/smoke.png";
+            imagem.alt = "Bomba Explodida";
+            setTimeout(function () {
+                imagem.src = "../assets/imgs/hole.png";
+                imagem.alt = "Buraco Vazio";
+        }, 300);
         } else {
             return;
         }
 
         document.getElementById("pontuacao").textContent = pontuacao;
-
-        // Faz o personagem desaparecer imediatamente.
-        imagem.src = "../assets/imgs/hole.png";
-        imagem.alt = "Buraco Vazio";
-        imagem.dataset.ocupado = "false";
     }
 });
