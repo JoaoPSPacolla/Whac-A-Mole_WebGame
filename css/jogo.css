@@ -84,6 +84,14 @@ body {
     align-items: center;
 }
 
+.containerJogo, .containerJogo *{
+    cursor: url('../assets/imgs/Diamond_Sword.png') 16 16, auto;
+}
+
+.conainerJogo:active, .containerJogo *:active {
+    cursor: url('../assets/imgs/Diamond_Sword2.png') 16 16, auto;
+}
+
 /* Grid dinâmico */
 .gradeJogo {
     --n: 3;

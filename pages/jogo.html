@@ -10,7 +10,9 @@
     <script src="../js/modoNormal.js" defer></script>
     <script src="../js/menuJogo.js" defer></script>
     <script src="../js/alocacaoTabuleiro.js" defer></script>
+    <script src="../js/estadoJogo.js" defer></script>
     <script src="../js/modoExplosivo.js" defer></script> <!-- Sem esse defer o código não contabiliza os pontos de clique no javascritp do jogo. Não sei o porquê-->
+    <!-- defer é usado para garantir que o script seja executado após o carregamento do HTML, evitando problemas de referência a elementos que ainda não existem no DOM. depois paga isso-->
 </head>
 
 <body>
@@ -58,7 +60,7 @@
 
                 <div class="cartaoStatus">
                     <span class="rotuloStatus">Próxima Meta</span>
-                    <strong id="proximo">100</strong>
+                    <strong id="proximo">0</strong>
                 </div>
                 
                 <div class="cartaoStatus">

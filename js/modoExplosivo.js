@@ -1,55 +1,13 @@
-
-var temporizadorVisual;
-var intervalo;
-var temporizadorFim;
-var jogoAtivo = false;
-
-var pontuacao = 0;
-var toupeirasAparecidas = 0;
-var identificadorAparicao = 0;
-var faseAtual = 0;
-
-// Todos os tempos estão em milissegundos.
-const FASES = [
-    {
-        duracao: 30000,
-        tempoVisivel: 1500,
-        tempoEntreAparicoes: 1000,
-        percentualMinimo: 70
-    },
-    {
-        duracao: 30000,
-        tempoVisivel: 1100,
-        tempoEntreAparicoes: 800,
-        percentualMinimo: 75
-    },
-    {
-        duracao: 30000,
-        tempoVisivel: 500,
-        tempoEntreAparicoes: 400,
-        percentualMinimo: 80
-    }
-];
-
 // Inicia uma nova partida.
 function iniciar() {
-    if (jogoAtivo) {
-        return;
-    }
-
-    faseAtual = 0;
+    resetarPartida();
     iniciarFase();
 }
 
 // Prepara e inicia a fase atual.
 function iniciarFase() {
-    if (faseAtual >= FASES.length) {
-        jogoAtivo = false;
-        alert("Parabéns! Você venceu todas as fases!");
-        return;
-    }
 
-    const fase = FASES[faseAtual];
+    const fase = obterFase(faseAtual);
 
     pontuacao = 0;
     toupeirasAparecidas = 0;
@@ -121,7 +79,7 @@ function iniciarFase() {
 
 // Avalia o desempenho e decide se o jogador avança.
 function checarProgresso() {
-    const fase = FASES[faseAtual];
+    const fase = obterFase(faseAtual);
 
     const aproveitamento = toupeirasAparecidas > 0
         ? (pontuacao / toupeirasAparecidas) * 100
@@ -158,8 +116,6 @@ function checarProgresso() {
                 aproveitamento: aproveitamentoFormatado,
                 meta: fase.percentualMinimo
             });
-        } else {
-            alert("Fim de jogo! Você não atingiu a meta.");
         }
     }
 }
@@ -170,7 +126,7 @@ function trocarFoto() {
         return;
     }
 
-    const fase = FASES[faseAtual];
+    const fase = obterFase(faseAtual);
     const buracos = document.querySelectorAll(".buraco");
     const buracosVazios = [];
 

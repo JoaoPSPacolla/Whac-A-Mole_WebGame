@@ -1,42 +1,12 @@
-var FASES_NORMAL = [
-    {
-        duracao: 30000,
-        tempoVisivel: 1500,
-        tempoEntreAparicoes: 1000,
-        percentualMinimo: 70
-    },
-    {
-        duracao: 30000,
-        tempoVisivel: 1100,
-        tempoEntreAparicoes: 900,
-        percentualMinimo: 75
-    },
-    {
-        duracao: 30000,
-        tempoVisivel: 700,
-        tempoEntreAparicoes: 600,
-        percentualMinimo: 80
-    }
-];
-
 // Inicia uma nova partida no modo normal.
 function iniciarNormal() {
-    if (jogoAtivo) {
-        return;
-    }
-
-    faseAtual = 0;
+    resetarPartida();
     iniciarFaseNormal();
 }
 
 function iniciarFaseNormal() {
-    if (faseAtual >= FASES_NORMAL.length) {
-        jogoAtivo = false;
-        alert("Parabéns! Você venceu todas as fases!");
-        return;
-    }
 
-    const fase = FASES_NORMAL[faseAtual];
+    const fase = obterFase(faseAtual);
 
     pontuacao = 0;
     toupeirasAparecidas = 0;
@@ -84,7 +54,7 @@ function iniciarFaseNormal() {
 }
 
 function checarProgressoNormal() {
-    const fase = FASES_NORMAL[faseAtual];
+    const fase = obterFase(faseAtual);
 
     const aproveitamento = toupeirasAparecidas > 0
         ? (pontuacao / toupeirasAparecidas) * 100
@@ -120,8 +90,6 @@ function checarProgressoNormal() {
                 aproveitamento: aproveitamentoFormatado,
                 meta: fase.percentualMinimo
             });
-        } else {
-            alert("Fim de jogo! Você não atingiu a meta.");
         }
     }
 }
@@ -132,7 +100,7 @@ function trocarFotoNormal() {
         return;
     }
 
-    const fase = FASES_NORMAL[faseAtual];
+    const fase = obterFase(faseAtual);
     const buracos = document.querySelectorAll(".buraco");
     const buracosVazios = [];
 

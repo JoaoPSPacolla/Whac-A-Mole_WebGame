@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const gradeJogo = document.getElementById("gradeJogo");
+    gradeJogo?.addEventListener("dragstart", (e) => e.preventDefault());
 
     // Criação dos componentes reutilizáveis
     function criarSelect(id, opcoes, valorSelecionado) {
