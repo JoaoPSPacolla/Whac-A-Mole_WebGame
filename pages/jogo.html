@@ -11,9 +11,7 @@
     <script src="../js/menuJogo.js" defer></script>
     <script src="../js/alocacaoTabuleiro.js" defer></script>
     <script src="../js/estadoJogo.js" defer></script>
-    <script src="../js/modoExplosivo.js" defer></script> <!-- Sem esse defer o código não contabiliza os pontos de clique no javascritp do jogo. Não sei o porquê-->
-    <!-- defer é usado para garantir que o script seja executado após o carregamento do HTML, evitando problemas de referência a elementos que ainda não existem no DOM. depois paga isso-->
-</head>
+    <script src="../js/modoExplosivo.js" defer></script>
 
 <body>
     <main class="paginaJogo">
@@ -31,14 +29,10 @@
             </nav>
         </header>
 
-        <!--
-        Para poder fazer a lógica do jogo , o que pensei foi trocar todas as imagens pelo hole aqui no HTML
-        Aí, no javascript seria feito algo randomico para ficar trocando as imagens 
-        -->
+    
         <div class="conteudoJogo">
             <div class="containerJogo">
                 <div class="gradeJogo" id="gradeJogo">
-                    <!-- Aqui é onde o javascript vai criar os buracos do jogo -->
                 </div>
             </div>
 

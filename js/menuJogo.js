@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    "use strict";
 
     // Configurações do jogo
     const TAMANHOS = [2, 3, 4, 5, 6, 7, 8];
@@ -18,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const gradeJogo = document.getElementById("gradeJogo");
     gradeJogo?.addEventListener("dragstart", (e) => e.preventDefault());
 
-    // Criação dos componentes reutilizáveis
+    // Criação dos componentes reutilizáveis para seleção de opções e botões
     function criarSelect(id, opcoes, valorSelecionado) {
         const select = document.createElement("select");
         select.id = id;
@@ -64,8 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
         overlay.id = id;
         overlay.className = `overlay-tabuleiro-minecraft ${classe}`;
         overlay.setAttribute("role", "dialog");
-        overlay.setAttribute("aria-modal", "true");
-        overlay.setAttribute("aria-labelledby", `${id}-titulo`);
 
         const caixa = document.createElement("div");
         caixa.className = "caixa-menu-minecraft caixa-resultado";
@@ -135,8 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     overlayMenu.id = "overlayMenuJogo";
     overlayMenu.className = "overlay-tabuleiro-minecraft";
     overlayMenu.setAttribute("role", "dialog");
-    overlayMenu.setAttribute("aria-modal", "true");
-    overlayMenu.setAttribute("aria-labelledby", "tituloMenuJogo");
 
     const caixaMenu = document.createElement("div");
     caixaMenu.className = "caixa-menu-minecraft";
