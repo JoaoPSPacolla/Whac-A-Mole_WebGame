@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="cadastro" id="formCadastro">
-        <form>
+        <form method="POST" action="../php/cadastro.php">
             <label>Nome Completo: </label><br>
             <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required><br><br>
 
@@ -30,6 +30,9 @@
 
             <label>Senha: </label><br>
             <input type="password" id="senha" name="senha" placeholder="Informe sua senha" required><br><br>
+
+            <label>Confirmar Senha: </label><br>
+            <input type="password" id="confirmarSenha" name="confirmar_senha" placeholder="Digite novamente a senha" required><br><br>
 
             <div class="containerBotao">
                 <button class="botao">Cadastrar</button>
