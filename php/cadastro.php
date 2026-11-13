@@ -98,7 +98,7 @@ if (empty($erros)) {
             // Violação de chave única: username, CPF ou e-mail repetido
             $erros[] = "Usuário, CPF ou e-mail já cadastrado.";
         } else {
-            error_log("Erro ao inserir usuario: " . $e->getMessage());
+            error_log("Erro ao inserir usuario: " . $e->getMessage()); // log para análise do erro por parte do dev
             $erros[] = "Erro ao realizar o cadastro. Tente novamente mais tarde.";
         }
     }

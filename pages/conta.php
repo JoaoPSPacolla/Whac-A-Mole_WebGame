@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    // Usuário não está logado, redireciona para a página de login
+    header('Location: index.html');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
