@@ -42,7 +42,7 @@ if ($data === '') {
 }
 
 // CPF (guarda somente os dígitos)
-$cpf = preg_replace('/\D/', '', $cpfBruto);
+$cpf = preg_replace('/\D/', '', $cpfBruto); //retira todos os caracteres que não forem numéricos
 if ($cpfBruto === '') {
     $erros[] = "O campo CPF é obrigatório.";
 } elseif (strlen($cpf) !== 11) {
@@ -91,7 +91,7 @@ if (empty($erros)) {
         $stmt->execute([$nome, $data, $cpf, $telefone, $email, $username, $senha_hash]);
 
         // Sucesso: vai para a tela de login
-        header('Location: ../index.html?cadastro=ok');
+        header('Location: ../index.php');
         exit;
     } catch (PDOException $e) {
         if ($e->getCode() === '23000') {
@@ -119,9 +119,9 @@ if (empty($erros)) {
     <div class="cadastro">
         <h1>Não foi possível concluir o cadastro</h1>
         <ul>
-<?php foreach ($erros as $erro): ?>
-            <li><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8') ?></li>
-<?php endforeach; ?>
+            <?php foreach ($erros as $erro): ?>
+                <li><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8') ?></li>
+            <?php endforeach; ?>
         </ul>
         <div class="containerBotao">
             <a href="../pages/cadastro.html" class="botao">Voltar ao formulário</a>

@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['usuario_id'])){
+        header('Location: ../index.php');
+        exit;
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -33,7 +42,7 @@
                     <span class="titulo_PG">Minha conta</span>
                 </a>
 
-                <a class="paginas" id="sair" href="../index.html">
+                <a class="paginas" id="sair" href="../php/logout.php">
                     <span class="titulo_PG">Sair</span>
                 </a>
             </nav>

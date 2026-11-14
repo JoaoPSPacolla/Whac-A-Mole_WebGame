@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    $errosLogin = $_SESSION['erros_login'] ?? [];
+    unset($_SESSION['erros_login']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,17 +17,27 @@
 </head>
 
 <body>
+    <!-- Caso erros apareçam na tentaitvas de login, ao usuário são apresentadas as mensagens de erros -->
+    <?php if (!empty($errosLogin)): ?>
+    <ul class="erros">
+        <?php foreach ($errosLogin as $erro): ?>
+            <li><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8') ?></li>
+        <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+            
+
      <main class="caixaLogin">   
-        <form class="caixaTexto" onsubmit="window.location.href='pages/home.html'; return false;">
+        <form class="caixaTexto" method="POST" action="php/login.php">
             <h1>Login</h1>
 
             <div class="campoInput">
-                <input type="text" placeholder="Usuário" required>
+                <input type="text" placeholder="Usuário" name="usuario" required>
                 <img src="assets/icones/user.png" alt="Ícone usuário" class="iconeInput">
             </div>
 
             <div class="campoInput">
-                <input type="password" placeholder="Senha" required>
+                <input type="password" placeholder="Senha" name="senha" required>
                 <img src="assets/icones/cadeado-trancado.png" alt="Ícone senha" class="iconeInput">
             </div>
 
