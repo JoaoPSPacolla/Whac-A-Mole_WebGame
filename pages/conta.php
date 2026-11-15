@@ -46,7 +46,7 @@ if (!isset($_SESSION['usuario_id'])) {
             </div>
 
             <div class="containerBotao">
-                <a href="home.html" class="botao">Voltar para a Home</a>
+                <a href="home.php" class="botao">Voltar para a Home</a>
             </div>
 
         </form>

@@ -17,19 +17,18 @@
 </head>
 
 <body>
-    <!-- Caso erros apareçam na tentaitvas de login, ao usuário são apresentadas as mensagens de erros -->
-    <?php if (!empty($errosLogin)): ?>
-    <ul class="erros">
-        <?php foreach ($errosLogin as $erro): ?>
-            <li><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8') ?></li>
-        <?php endforeach; ?>
-    </ul>
-    <?php endif; ?>
-            
-
      <main class="caixaLogin">   
         <form class="caixaTexto" method="POST" action="php/login.php">
             <h1>Login</h1>
+
+            <!-- Se houver erro na tentativa de login, as mensagens aparecem dentro da caixa -->
+            <?php if (!empty($errosLogin)): ?>
+            <ul class="erros" role="alert">
+                <?php foreach ($errosLogin as $erro): ?>
+                    <li><?= htmlspecialchars($erro, ENT_QUOTES, 'UTF-8') ?></li>
+                <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
 
             <div class="campoInput">
                 <input type="text" placeholder="Usuário" name="usuario" required>

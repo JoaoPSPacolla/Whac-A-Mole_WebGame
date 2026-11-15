@@ -169,3 +169,11 @@ tbody tr:nth-child(odd) {
 tbody tr:hover {
     background: rgba(255, 255, 255, 0.15);
 }
+
+/* Mensagem quando não há partidas */
+.mensagemHistorico {
+    text-align: center;
+    font-size: 0.65rem;
+    color: #ffffa0;
+    padding: 24px 0;
+}

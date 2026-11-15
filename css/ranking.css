@@ -169,3 +169,34 @@ tbody tr:nth-child(odd) {
 tbody tr:hover {
     background: rgba(255, 255, 255, 0.15);
 }
+
+/* Filtro por modalidade e mensagens */
+.filtroRanking {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.filtroRanking a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 0.6rem;
+    padding: 8px 12px;
+    background-color: #707070;
+    border: 2px solid #000;
+    box-shadow: inset 2px 2px 0 #adadad, inset -2px -2px 0 #383838;
+}
+
+.filtroRanking a:hover,
+.filtroRanking a.ativo {
+    background-color: #38852a;
+    color: #ffffa0;
+}
+
+.mensagemRanking {
+    text-align: center;
+    font-size: 0.65rem;
+    color: #ffffa0;
+    padding: 24px 0;
+}

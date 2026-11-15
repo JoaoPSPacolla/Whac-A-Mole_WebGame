@@ -30,11 +30,11 @@
                 <a class="paginas" id="jogar" href="jogo.html">
                     <span class="titulo_PG">Jogar</span>
                 </a>
-                <a class="paginas" id="ranking" href="ranking.html">
+                <a class="paginas" id="ranking" href="ranking.php">
                     <span class="titulo_PG">Ranking global</span>
                 </a>
 
-                <a class="paginas" id="historico" href="historico.html">
+                <a class="paginas" id="historico" href="historico.php">
                     <span class="titulo_PG">Histórico</span>
                 </a>
 
