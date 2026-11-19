@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const botao = form.querySelector("button[type=submit]");
   const textoBotao = botao.textContent;
   const DICA =
-    "Corrija os campos em vermelho. Passe o mouse ou clique neles para ver o que está errado.";
+    "Corrija os campos em vermelho.";
 
   const regras = {
     nome: function (v) {
