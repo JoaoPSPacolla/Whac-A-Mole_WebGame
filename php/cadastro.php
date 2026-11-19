@@ -68,8 +68,8 @@ if ($cpfBruto === '') {
 // Telefone
 if ($telefone === '') {
     $erros['telefone'] = "O campo telefone é obrigatório.";
-} elseif (mb_strlen($telefone) > 20) {
-    $erros['telefone'] = "O telefone deve ter no máximo 20 caracteres.";
+} elseif (mb_strlen($telefone) > 15) {
+    $erros['telefone'] = "O telefone deve ter no máximo 15 caracteres, exemplo: (11) 98765-4321.";
 }
 
 // E-mail
