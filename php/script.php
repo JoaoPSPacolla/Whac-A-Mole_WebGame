@@ -1,14 +1,5 @@
 <?php
-    /**
-     * Script responsável por criar as tabelas no banco de dados.
-     * 
-     * Este arquivo cria as tabelas necessárias para o funcionamento do sistema, caso elas ainda não existam.
-     * As tabelas criadas são: "usuarios" e "partidas".
-     * Com o require_once é possível reutilizar o arquivo de conexão de banco e o objeto PDO, evitando repetição
-     * de código.
-     */
-    
-    $host = '127.0.0.1';
+    $host = '127.0.0.1'; //ip loopback
     $username = 'root';
     $password = '';
 
