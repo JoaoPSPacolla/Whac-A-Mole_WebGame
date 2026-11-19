@@ -181,3 +181,17 @@ input.invalido:focus + .erroCampo {
 .erroGeral[hidden] {
     display: none;
 }
+
+.sucessoGeral {
+    margin-bottom: 16px;
+    padding: 10px 12px;
+    font-family: var(--fonte-campos);
+    font-size: 0.85rem;
+    color: #1e4a17;
+    background-color: #dcf5d8;
+    border: 2px solid #38852a;
+}
+
+.sucessoGeral[hidden] {
+    display: none;
+}

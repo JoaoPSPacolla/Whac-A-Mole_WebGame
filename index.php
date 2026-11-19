@@ -40,13 +40,6 @@
                 <img src="assets/icones/cadeado-trancado.png" alt="Ícone senha" class="iconeInput">
             </div>
 
-            <div class="opcoesLogin">
-                <label id="lembrarLogin">
-                    <input type="checkbox" name="lembrar"> Lembrar de mim
-                </label>
-                <p id="esqueceuSenha" onclick="mensagem()">Esqueci minha senha</p>
-            </div>
-
             <button type="submit">Entrar</button>
             <a href="pages/cadastro.html" id="semConta">Não tenho conta</a>
         </form>
